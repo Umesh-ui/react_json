@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteStream, editStream, getStreams } from "../redux/action";
+import { deleteStream, getStreams } from "../redux/action";
 import {
   Button,
   Container,
-  Dimmer,
-  Divider,
-  Grid,
   Header,
   List,
   ListContent,
@@ -45,8 +42,7 @@ const StreamList = () => {
   return (
     <Container style={{ paddingTop: "3rem" }}>
       <Header size="huge" style={{ textAlign: "center" }}>
-        {" "}
-        Streams{" "}
+        Streams
       </Header>
       <List divided>
         {streamList.length > 0

@@ -1,21 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import {
-  Button,
-  Checkbox,
-  Container,
-  Form,
-  FormField,
-  Header,
-} from "semantic-ui-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Button, Container, Form, FormField, Header } from "semantic-ui-react";
 import { editStream } from "../redux/action";
 
 const EditStream = () => {
-  // const { stream } = useParams();
-
   const location = useLocation();
-  console.log("edit data", location?.state.stream);
   const stream = location?.state.stream;
   const [title, setTitle] = useState(stream.title);
   const [description, setDescription] = useState(stream.description);
