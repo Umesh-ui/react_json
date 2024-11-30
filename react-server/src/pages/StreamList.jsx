@@ -12,6 +12,7 @@ import {
   ListIcon,
   ListItem,
   Loader,
+  Segment,
 } from "semantic-ui-react";
 import { useNavigate } from "react-router-dom";
 
@@ -47,41 +48,43 @@ const StreamList = () => {
       <List divided>
         {streamList.length > 0
           ? streamList.map((stream) => (
-              <ListItem key={stream.id}>
-                <ListContent
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <div style={{ display: "flex", alignItems: "center" }}>
-                    <ListIcon
-                      name="bookmark outline"
-                      size="large"
-                      verticalAlign="middle"
-                    />
-                    <div>
-                      <ListHeader>{stream.title}</ListHeader>
-                      <ListDescription>{stream.description}</ListDescription>
+              <Segment>
+                <ListItem key={stream.id}>
+                  <ListContent
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                      <ListIcon
+                        name="bookmark outline"
+                        size="large"
+                        verticalAlign="middle"
+                      />
+                      <div>
+                        <ListHeader>{stream.title}</ListHeader>
+                        <ListDescription>{stream.description}</ListDescription>
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <Button
-                      color="primary"
-                      onClick={() => handleEditStream(stream)}
-                    >
-                      {" "}
-                      Edit{" "}
-                    </Button>
-                    <Button
-                      color="red"
-                      style={{ marginTop: "2rem" }}
-                      onClick={() => handleDelete(stream.id)}
-                    >
-                      Delete
-                    </Button>
-                  </div>
-                </ListContent>
-              </ListItem>
+                    <div>
+                      <Button
+                        color="primary"
+                        onClick={() => handleEditStream(stream)}
+                      >
+                        {" "}
+                        Edit{" "}
+                      </Button>
+                      <Button
+                        color="red"
+                        style={{ marginTop: "2rem" }}
+                        onClick={() => handleDelete(stream.id)}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                  </ListContent>
+                </ListItem>
+              </Segment>
             ))
-          : ""}
+          : <Header size="small"> No Streams Available </Header>}
       </List>
       <Button onClick={handleCreateStream} color="green">
         Create Steam
