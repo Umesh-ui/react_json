@@ -20,7 +20,7 @@ allows users to view a list of streama, add new streams, edit existing streams a
 
 ### 1. Clone the repository
 git clone (https://github.com/Umesh-ui/react_json)
-cd react_json/react-server
+cd react_json
 
 ## Install Dependencies for both folders
 npm i 
