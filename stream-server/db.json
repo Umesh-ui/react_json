@@ -1,8 +1,8 @@
 {
   "streams": [
     {
-      "title": "dsds",
-      "description": "dsds",
+      "title": "Hello React",
+      "description": "This is simple stream manger app",
       "id": 1
     }
   ]
